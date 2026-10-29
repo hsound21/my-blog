@@ -1,0 +1,95 @@
+/* 테마 토큰, 리셋, 기본 타이포그래피 */
+:root {
+  color-scheme: light;
+  --bg: #ffffff;
+  --bg-subtle: #f6f7f9;
+  --fg: #1f2328;
+  --muted: #5f6872;
+  --border: #e4e7eb;
+  --accent: #2557d6;
+  --accent-soft: #e8efff;
+  --code-bg: #f3f4f6;
+  --focus: #2557d6;
+
+  --font-body: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    "Malgun Gothic", "Noto Sans KR", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "D2Coding", monospace;
+
+  --measure: 44rem;
+  --gutter: 1rem;
+  --radius: 8px;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #151618;
+  --bg-subtle: #1c1e21;
+  --fg: #e6e7e9;
+  --muted: #9aa1ab;
+  --border: #2d3035;
+  --accent: #7ba5ff;
+  --accent-soft: #1f2a44;
+  --code-bg: #212327;
+  --focus: #7ba5ff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 0.2em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+#app:focus {
+  outline: none;
+}
+
+@media (min-width: 640px) {
+  body {
+    font-size: 1.125rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}

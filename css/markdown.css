@@ -1,0 +1,117 @@
+/* 마크다운 본문(.prose) 스타일 */
+.prose > :first-child { margin-top: 0; }
+.prose > :last-child { margin-bottom: 0; }
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  margin: 2.25em 0 0.75em;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.prose h1 { font-size: 1.75rem; }
+.prose h2 { font-size: 1.45rem; padding-bottom: 0.3em; border-bottom: 1px solid var(--border); }
+.prose h3 { font-size: 1.2rem; }
+.prose h4,
+.prose h5,
+.prose h6 { font-size: 1.05rem; }
+
+.prose p,
+.prose ul,
+.prose ol,
+.prose blockquote,
+.prose pre,
+.prose .table-wrap {
+  margin: 0 0 1.25em;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.5em;
+}
+
+.prose li + li { margin-top: 0.25em; }
+.prose li > ul,
+.prose li > ol,
+.prose li > p { margin: 0.25em 0 0; }
+
+.prose a { text-decoration: underline; }
+.prose strong { font-weight: 700; }
+
+.prose blockquote {
+  padding: 0.25em 1em;
+  border-left: 3px solid var(--accent);
+  background: var(--bg-subtle);
+  color: var(--muted);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.prose blockquote > :last-child { margin-bottom: 0; }
+
+.prose hr {
+  margin: 2.5em 0;
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+
+.prose img {
+  display: block;
+  margin: 1.5em auto;
+  border-radius: var(--radius);
+}
+
+/* 코드 */
+.prose code {
+  padding: 0.15em 0.4em;
+  border-radius: 6px;
+  background: var(--code-bg);
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  word-break: break-word;
+}
+
+.prose pre {
+  padding: 1em 1.125em;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--code-bg);
+  line-height: 1.6;
+  -webkit-overflow-scrolling: touch;
+}
+
+.prose pre code {
+  padding: 0;
+  background: none;
+  font-size: 0.875rem;
+  word-break: normal;
+  white-space: pre;
+}
+
+/* 표: 좁은 화면에서는 가로 스크롤 */
+.prose .table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+}
+
+.prose th,
+.prose td {
+  padding: 0.5em 0.875em;
+  border: 1px solid var(--border);
+  text-align: left;
+  word-break: normal;
+}
+
+.prose th { background: var(--bg-subtle); font-weight: 600; }
+.prose td[align="center"], .prose th[align="center"] { text-align: center; }
+.prose td[align="right"], .prose th[align="right"] { text-align: right; }
